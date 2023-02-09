@@ -1,0 +1,18 @@
+.expense-party{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    margin:1rem 0;
+    background-color:#E4BE9E ;
+    border-radius: 20px;
+    border: 1px solid white;
+
+}
+.expense-name {
+    display: flex;
+    justify-content: space-around;
+}
+h3{
+    color:white;
+}
