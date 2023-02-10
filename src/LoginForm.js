@@ -1,30 +1,25 @@
 import React from "react";
-import "./Login.css";
-import { useState } from "react";
 
-const LoginForm = (props) => {
+import { useState } from "react";
+import "./LoginForm.css";
+
+const LoginForm = () => {
   
-  return props.setOpenModal ? (
+  return (
     <div>
       <form>
-        <label>User Name</label>
-        <input
-          type="text"
-          placeholder="Enter Username"
-          name="username"
-          required
-        ></input>
-        <label>Password</label>
-        <input
-          type="text"
-          placeholder="Enter Password"
-          name="password"
-          required
-        ></input>
+        <div className="Login-area">
+          <div>
+            <label>UserName</label>
+            <input type="text" placeholder="Enter Username" required></input>
+          </div>
+          <div>
+            <label>UserName</label>
+            <input type="text" placeholder="Enter Username" required></input>
+          </div>
+        </div>
       </form>
     </div>
-  ) : (
-    ""
   );
 };
 export default LoginForm;

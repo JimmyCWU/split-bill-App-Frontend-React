@@ -1,23 +1,13 @@
 import React from "react";
-import "./Login.css";
 import { useState } from "react";
-import LoginForm from "./Login"
-
+import LoginForm from "./LoginForm";
+import "./Login.css";
 
 const Login = () => {
-    const [modalOpen, setModalOpen] = useState(false);
-
+    
     return (
-      <div>
-        <button
-          className="openModalBtn"
-          onClick={() => {
-            setModalOpen(true);
-          }}
-        >
-          login
-        </button>
-        <LoginForm setModalOpen={modalOpen} />
+      <div className="menu">
+          <LoginForm />
       </div>
     );
 }

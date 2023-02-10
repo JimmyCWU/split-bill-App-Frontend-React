@@ -12,6 +12,14 @@ const AddPartyPopup = () =>{
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const [memberNum, setMemberNum ] = useState(1);
+
+  const handleSubmit = (e) => {
+    //此處接api
+  }
+
+
+
     return (
       <div>
         <button className="btn" onClick={handleShow}>
@@ -41,6 +49,14 @@ const AddPartyPopup = () =>{
                 <Form.Label>Date</Form.Label>
                 <Form.Control type="Date" placeholder="Date" />
               </Form.Group>
+              <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Label>Number of Member</Form.Label>
+                <Form.Control
+                  type="Number of Member"
+                  placeholder="Number of Member"
+                  onChange={(e) => setMemberNum(e.target.value)}
+                />
+              </Form.Group>
               <Row className="g-2">
                 <Col md>
                   <FloatingLabel
@@ -62,7 +78,7 @@ const AddPartyPopup = () =>{
             </Form>
           </Modal.Body>
           <Modal.Footer>
-            <button className="btn" onClick={handleClose}>
+            <button className="btn" onSubmit={handleSubmit}>
               Add
             </button>
           </Modal.Footer>
