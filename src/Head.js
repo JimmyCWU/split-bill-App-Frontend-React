@@ -3,10 +3,7 @@ import "./Head.css";
 import { useState } from "react";
 import AddPartyPopup from "./AddPartyPopup.js";
 
-
 const Head = () => {
-  const [ButtonPop, setButtonPop] = useState(false);
-
 
     return (
       <div className="Head">
@@ -17,10 +14,7 @@ const Head = () => {
             </text>
           </svg>
         </div>
-        <button className="btn" onClick={() => setButtonPop(true)}>
-          Add Party
-        </button>
-        <AddPartyPopup trigger={ButtonPop} setButtonPop={setButtonPop} />
+        <AddPartyPopup />
       </div>
     );
 }
