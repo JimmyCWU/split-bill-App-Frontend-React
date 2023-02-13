@@ -5,15 +5,15 @@ import AddPartyPopup from "./AddPartyPopup.js";
 import Login from "./Login";
 
 const Head = () => {
-   const [userName, setUserName] = useState("My App");
-    
+   const [userName, setUserName] = useState('My App');
+  
     return (
       <div className="Head">
         <Login />
         <div>
           <svg className="logo-box">
             <text x="50%" y="50%" fill="white" className="logo">
-              Good Day, {userName}
+              Hello, {userName}
             </text>
           </svg>
         </div>

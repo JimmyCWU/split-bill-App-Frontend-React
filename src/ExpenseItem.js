@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./Expense";
 import "./ExpenseItem.css"
 import ExpenseDate from "./ExpenseDate";
+import BillDetail from "./BillDetail.js";
 
 const ExpenseItem = (props) =>{
     //const [billName, setBillName] = useState('');
@@ -17,6 +18,7 @@ const ExpenseItem = (props) =>{
             <h3>{billName}</h3>
           </div>
           <h3>$ {totoalAmount}</h3>
+          <BillDetail />
         </div>
       </div>
     );
