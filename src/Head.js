@@ -9,13 +9,14 @@ const Head = () => {
   
     return (
       <div className="Head">
-        <Login />
         <div>
-          <svg className="logo-box">
-            <text x="50%" y="50%" fill="white" className="logo">
-              Hello, {userName}
-            </text>
-          </svg>
+          <div className="neon">
+            <span style={{ color: "#2ecce0" }}>J</span>
+            <span style={{ color: "#fccf31" }}>i</span>
+            <span style={{ color: "#fa7c49" }}>m</span>
+            <span style={{ color: "#fccf31" }}>m</span>
+            <span style={{ color: "#2575fc" }}>y</span>
+          </div>
         </div>
         <AddPartyPopup />
       </div>

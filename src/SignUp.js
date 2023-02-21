@@ -35,7 +35,7 @@ const SignUp = () => {
     return (
       <div>
         <Button variant="primary" onClick={handleShow}>
-          Launch static backdrop modal
+          SignUp
         </Button>
 
         <Modal

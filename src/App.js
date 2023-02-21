@@ -1,16 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
-import Expense from "./Expense";
-import Head from "./Head";
+import HomePage from "./HomePage";
+import WelcomePage from "./WelcomePage";
+import { BrowserRouter, Route, Link, Routes, Switch } from "react-router-dom";
 
 
-
-function App() {
+const App = () => {
   return (
-    <div>
-      <Head />
-      <Expense />
-    </div>
+      <Routes>
+        <Route path="/" element={<WelcomePage />} />
+        <Route path="/HomePage" element={<HomePage />}/>
+      </Routes>
   );
 }
 

@@ -9,32 +9,26 @@
     border-radius: 20px;
     text-align: center;
 }
-.logo-box {
-    text-align: center;
-    justify-items: center;
+.neon{
+    color:rgba(255,255,255,0.5);
+    font-size: 5rem;
 }
-.logo{
-    font-weight: bold;
-    font-size: 2rem;
-    text-anchor: middle;
-    dominant-baseline: middle;
-    stroke: #fff;
-    stroke-width: 1;
-    animation: show 5s ease-in-out;
+.neon > span {
+    animation: neon 1s steps(1) infinite;
+}
 
-}
-@keyframes show{
-    0%, 10%{
-        fill:transparent;
-        stroke-dasharray: 0% 100%;
+@keyframes neon{
+    5%, 9%, 13%, 25%{
+        color: rgba(255, 255, 255, 0.5);
+        text-shadow: none;
     }
-    70%{
-        stroke-dasharray: 100% 0%;
-        stroke-opacity: 1;
-        fill: transparent;
-    }
-    80%, 100% {
-        stroke-opacity: 0;
-        fill:#fff;
+    7%, 11%,15%, 19%, 30%, 100%{
+        color:var(--color);
+        text-shadow: 
+        0px 0px 5px var(--color),
+        0px 0px 20px var(--color),
+        0px 0px 50px var(--color),
+        0px 0px 70px var(--color)
     }
 }
+
