@@ -11,11 +11,9 @@ const Head = () => {
       <div className="Head">
         <div>
           <div className="neon">
-            <span style={{ color: "#2ecce0" }}>J</span>
-            <span style={{ color: "#fccf31" }}>i</span>
-            <span style={{ color: "#fa7c49" }}>m</span>
-            <span style={{ color: "#fccf31" }}>m</span>
-            <span style={{ color: "#2575fc" }}>y</span>
+            <span style={{ color: "#2ecce0" }}>A</span>
+            <span style={{ color: "#fccf31" }}>P</span>
+            <span style={{ color: "#fa7c49" }}>P</span>
           </div>
         </div>
         <AddPartyPopup />

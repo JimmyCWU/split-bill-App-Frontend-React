@@ -14,7 +14,7 @@
     font-size: 5rem;
 }
 .neon > span {
-    animation: neon 1s steps(1) infinite;
+    animation: neon 3s steps(1) infinite;
 }
 
 @keyframes neon{

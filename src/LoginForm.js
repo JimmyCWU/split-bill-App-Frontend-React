@@ -15,8 +15,10 @@ const LoginForm = () => {
   
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const api = `http://192.168.1.150/api/auth/login`;
-  const [token, setToken] = useState("");
+  const api = `http://192.168.1.150/user-service/api/auth/login`;
+  const [authtoken, setAuthToken] = useState(
+    localStorage.getItem("token" || "")
+  );
   const navigate = useNavigate();
 
   const handleSubmit = (event) => {
@@ -28,11 +30,15 @@ const LoginForm = () => {
         'password':password 
       })
       .then((res) => {
-        console.log(res);
-        setToken(res.data.token);
-        localStorage.setItem("token", JSON.stringify(token));
-        console.log(JSON.stringify(token));
-        console.log("login success");
+        const getToken = res.data.token;
+        console.log(getToken);
+        console.log(typeof getToken)
+        localStorage.setItem("token", JSON.stringify(getToken));
+        setAuthToken(res.data.token);
+  
+
+        
+        
         navigate("/HomePage");
 
         

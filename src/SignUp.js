@@ -11,16 +11,14 @@ const SignUp = () => {
     const handleShow = () => setShow(true);
     const [username, setUserName] = useState("");
     const [password, setPassWord] = useState("");
-    const [email, setEmail] = useState("");
     const [name, setName] = useState("");
-    const api = `http://192.168.1.150/api/auth/register`;
+    const api = `http://192.168.1.150/user-service/api/auth/register`;
 
     const handleSignUpForm = (event) => {
         axios
           .post(api, {
             'username': username,
             'password': password,
-            'email': email,
             'name':name
           })
           .then((res) => {
@@ -29,6 +27,7 @@ const SignUp = () => {
           })
           .catch((err) => {
             console.log(err);
+            console.log()
           });
     };
 
@@ -72,15 +71,6 @@ const SignUp = () => {
                 type="text"
                 placeholder="Enter Password"
                 onChange={(e) => setPassWord(e.target.value)}
-                required
-              ></input>
-            </div>
-            <div>
-              <label>Email:</label>
-              <input
-                type="text"
-                placeholder="Enter Email"
-                onChange={(e) => setEmail(e.target.value)}
                 required
               ></input>
             </div>

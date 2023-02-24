@@ -8,7 +8,7 @@ const ExpenseItem = (props) =>{
     //const [billName, setBillName] = useState('');
     //const [totalAmount, setTotalAmount] = useState(props.amountAmount);
     //const[memberId,setMemberId] = useState(props.memberId);
-      const {billName,totoalAmount,billId,createTime } = props;
+      const { billName, totalAmount, billId, createTime } = props;
       //const [partyId, setPartyId] = useState(props.partyId);
     return (
       <div>
@@ -17,8 +17,8 @@ const ExpenseItem = (props) =>{
           <div className="expense-name">
             <h3>{billName}</h3>
           </div>
-          <h3>$ {totoalAmount}</h3>
-          <BillDetail />
+          <h3>$ {totalAmount}</h3>
+          <BillDetail totalAmount={totalAmount} />
         </div>
       </div>
     );

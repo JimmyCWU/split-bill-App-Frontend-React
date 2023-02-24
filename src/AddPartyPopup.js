@@ -3,23 +3,32 @@ import { useState } from "react";
 import "./AddPartyPopup.css";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
-import Row from "react-bootstrap/Row";
-import FloatingLabel from "react-bootstrap/FloatingLabel";
-import Col from "react-bootstrap/Col";
+import axios from "axios";
 
 
 const AddPartyPopup = () =>{
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const [memberNum, setMemberNum ] = useState(1);
+  const [partyName, setPartyName] = useState("");
+  const api = "//192.168.1.150/party-service/api/party/add";
 
   const handleSubmit = (e) => {
-    //此處接api
+    const getData = localStorage.getItem("token");
+    const token = JSON.parse(getData);
+    console.log(token);
+    console.log(partyName);
+    axios.post(api, {
+      headers: {
+          'Authorization': `Bearer ${token}`
+        },
+      'partyName': partyName,
+    }).then((res) => {
+      console.log("ok");
+    }).catch((err) => {
+      console.log(err);
+    })
   }
-
-
-
     return (
       <div>
         <button className="btn" onClick={handleShow}>
@@ -38,47 +47,17 @@ const AddPartyPopup = () =>{
           <Modal.Body>
             <Form>
               <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Label>Expense Item</Form.Label>
-                <Form.Control type="Expense-Item" placeholder="Expense Item" />
-              </Form.Group>
-              <Form.Group className="mb-3" controlId="formBasicPassword">
-                <Form.Label>Total Cost</Form.Label>
-                <Form.Control type="Total-Cost" placeholder="Total Cost" />
-              </Form.Group>
-              <Form.Group className="mb-3" controlId="formBasicPassword">
-                <Form.Label>Date</Form.Label>
-                <Form.Control type="Date" placeholder="Date" />
-              </Form.Group>
-              <Form.Group className="mb-3" controlId="formBasicPassword">
-                <Form.Label>Number of Member</Form.Label>
+                <Form.Label>Party Name</Form.Label>
                 <Form.Control
-                  type="Number of Member"
-                  placeholder="Number of Member"
-                  onChange={(e) => setMemberNum(e.target.value)}
+                  type="Party Name"
+                  placeholder="Party Name"
+                  onChange={(e) => setPartyName(e.target.value)}
                 />
               </Form.Group>
-              <Row className="g-2">
-                <Col md>
-                  <FloatingLabel
-                    controlId="floatingInputGrid"
-                    label="Member Name"
-                  >
-                    <Form.Control placeholder="Member Name" />
-                  </FloatingLabel>
-                </Col>
-                <Col md>
-                  <FloatingLabel
-                    controlId="floatingSelectGrid"
-                    label="Member Cost"
-                  >
-                    <Form.Control placeholder="Member Cost" />
-                  </FloatingLabel>
-                </Col>
-              </Row>
             </Form>
           </Modal.Body>
           <Modal.Footer>
-            <button className="btn" onSubmit={handleSubmit}>
+            <button className="btn" onClick={handleSubmit}>
               Add
             </button>
           </Modal.Footer>
