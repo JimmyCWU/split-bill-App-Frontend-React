@@ -6,7 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 // Bootstrap Bundle JS
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import ExpenseItem from "./ExpenseItem";
-import Party from "./Party";
+
 
 const Expense = () =>{
   const [result, setResult] = useState("");
@@ -35,8 +35,6 @@ const Expense = () =>{
   return (
     <div>
       <div className="expenses">
-        <Party />
-        
         {list.map((data, index) => {
           return (
             <ExpenseItem

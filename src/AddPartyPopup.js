@@ -5,29 +5,38 @@ import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import axios from "axios";
 
-
 const AddPartyPopup = () =>{
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const [partyName, setPartyName] = useState("");
-  const api = "//192.168.1.150/party-service/api/party/add";
+  const [memberQuantity, setNemberQuantity] = useState(0);
+  const api = "http://192.168.1.150/party-service/api/party/add";
 
   const handleSubmit = (e) => {
     const getData = localStorage.getItem("token");
     const token = JSON.parse(getData);
     console.log(token);
-    console.log(partyName);
-    axios.post(api, {
-      headers: {
-          'Authorization': `Bearer ${token}`
+    const now = new Date();
+    const date = JSON.stringify(now);
+    axios
+      .post(
+        api,
+        {
+          partyName: partyName,
         },
-      'partyName': partyName,
-    }).then((res) => {
-      console.log("ok");
-    }).catch((err) => {
-      console.log(err);
-    })
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      )
+      .then((res) => {
+        console.log("ok");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
     return (
       <div>
