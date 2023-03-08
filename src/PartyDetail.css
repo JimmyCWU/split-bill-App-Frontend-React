@@ -1,0 +1,7 @@
+.part-addBill-box{
+    display:flex;
+    justify-content: space-between;
+}
+.show-party-name{
+    color:white;
+}

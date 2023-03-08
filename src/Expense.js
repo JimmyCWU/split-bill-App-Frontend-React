@@ -13,7 +13,7 @@ const Expense = () =>{
   const [partyId, setPartyId] = useState("");
   const [list, setList] = useState([]);
   const token = '';
-  const api = `http://192.168.1.150/bill-service/api/bill/1`;
+  const api = `http://192.168.1.150/bill-service/api/bill/2`;
   React.useEffect(() => {
   const getData = localStorage.getItem("token");
   const token = JSON.parse(getData);

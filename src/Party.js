@@ -7,7 +7,6 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import AAA from './AAA';
 
 
-
 const Party = () => {
     const [partyName, setPartyName] = useState("眼鏡猴");
 

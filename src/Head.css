@@ -1,7 +1,7 @@
 .Head {
     margin: auto;
     height: auto;
-    padding: 0 0 30px 0;
+    padding: 30px;
     background-color: #FF934F;
     margin: auto;
     width: 50rem;
@@ -9,26 +9,33 @@
     border-radius: 20px;
     text-align: center;
 }
-.neon{
-    color:rgba(255,255,255,0.5);
-    font-size: 5rem;
+
+.Head-Wellcome{
+   color:#fcddaf;
+   font-size:6rem;
+   letter-spacing: 0.2rem;
+   animation: text 5s ease-in-out infinite alternate;
 }
-.neon > span {
-    animation: neon 3s steps(1) infinite;
+.add-party-button{
+    margin-top:3rem;
 }
 
-@keyframes neon{
-    5%, 9%, 13%, 25%{
-        color: rgba(255, 255, 255, 0.5);
-        text-shadow: none;
+@keyframes text{
+    0%, 30% {
+        text-shadow:
+        5px 5px 0px #eb452b,
+        10px 10px 0px #efa032,
+        15px 15px 0px #46b59b,
+        20px 20px 0px #017e7f,
+        25px 25px 0px #0d5370,
+        35px 35px 20px #1e1e25,
+        50px 50px 40px #131318;;
+        transform: skewX(-20deg) skewY(1deg);
     }
-    7%, 11%,15%, 19%, 30%, 100%{
-        color:var(--color);
-        text-shadow: 
-        0px 0px 5px var(--color),
-        0px 0px 20px var(--color),
-        0px 0px 50px var(--color),
-        0px 0px 70px var(--color)
+    90%, 100%{
+        text-shadow:none;
+        transform:none;
     }
 }
+
 

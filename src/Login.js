@@ -9,7 +9,7 @@ const Login = () => {
       <div>
         <div className="menu">
           <svg className="logo-box">
-            <text x="50%" y="50%" fill="white" className="logo">
+            <text x="50%" y="70%" fill="white" className="logo">
               Hello My App
             </text>
           </svg>

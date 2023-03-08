@@ -9,10 +9,9 @@ import Button from "react-bootstrap/Button";
 import "./LoginForm.css";
 
 const LoginForm = () => {
-   const [show, setShow] = useState(false);
-   const handleClose = () => setShow(false);
-   const handleShow = () => setShow(true);
-  
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const api = `http://192.168.1.150/user-service/api/auth/login`;
@@ -35,20 +34,13 @@ const LoginForm = () => {
         console.log(typeof getToken)
         localStorage.setItem("token", JSON.stringify(getToken));
         setAuthToken(res.data.token);
-  
-
-        
-        
         navigate("/HomePage");
-
-        
       })
       .catch((err) => {
         console.log(err);
         console.log("login fail");
       });
   };
-  
   return (
     <div>
       <Button variant="primary" onClick={handleShow}>
@@ -56,12 +48,12 @@ const LoginForm = () => {
       </Button>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
+          <Modal.Title>Login Now</Modal.Title>
         </Modal.Header>
         <form>
           <div className="Login-area">
-            <div>
-              <label>UserName</label>
+            <div className="Login-box">
+              <label>UserName :</label>
               <input
                 type="text"
                 placeholder="Enter Username"
@@ -69,8 +61,8 @@ const LoginForm = () => {
                 required
               ></input>
             </div>
-            <div>
-              <label>Password</label>
+            <div className="Login-box">
+              <label>Password :</label>
               <input
                 type="text"
                 placeholder="Enter Password"

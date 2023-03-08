@@ -1,12 +1,12 @@
 .menu{
     width: 70%;
     margin: 50px auto;
-    background-color: white;
-    border-style: dashed;
-    border-color:#FF934F;
+    background-color: #FF934F;
+    border-color:#fff;
     display: flex;
     flex-direction: column;
     padding:10%;
+    border-radius: 20px;
 }
 .logo-box {
     text-align: center;
@@ -15,12 +15,12 @@
 
 .logo {
     font-weight: bold;
-    font-size: 6rem;
+    font-size: 6vw;
     text-anchor: middle;
     dominant-baseline: middle;
-    stroke: #FF934F;
+    stroke: #fff;
     stroke-width: 1;
-    animation: show 5s ease-in-out;
+    animation: show 6s ease-in-out;
 
 }
 
@@ -49,6 +49,7 @@
     display:flex;
     width: 100%;
     justify-content: space-around;
+    padding: 3rem;
     
 }
 

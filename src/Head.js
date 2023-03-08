@@ -10,13 +10,11 @@ const Head = () => {
     return (
       <div className="Head">
         <div>
-          <div className="neon">
-            <span style={{ color: "#2ecce0" }}>A</span>
-            <span style={{ color: "#fccf31" }}>P</span>
-            <span style={{ color: "#fa7c49" }}>P</span>
-          </div>
+          <h1 className="Head-Wellcome">Welcome</h1>
         </div>
-        <AddPartyPopup />
+        <div className="add-party-button">
+          <AddPartyPopup />
+        </div>
       </div>
     );
 }
