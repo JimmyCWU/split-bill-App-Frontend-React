@@ -2,18 +2,18 @@ import React, { useState } from "react";
 import axios from "axios";
 import Expense from "./Expense";
 import AddBill from "./AddBill";
-import AddMembers from "./AddMembers";
+import AddMemberPopup from "./AddMemberPopup";
 import './PartyDetail.css';
 
 const PartyDetail = (props) =>{
-    const {partyName} = props
+    const {partyName, partyId} = props
   
     return (
       <div className="expenses">
-        <div className="part-addBill-box">
-          <h2 className="show-party-name">Party Name :{partyName}</h2>
+        <div className="party-top-area">
+          <h2>Party Name : {partyName}</h2>
           <AddBill />
-          <AddMembers />
+          <AddMemberPopup />
         </div>
         <Expense />
       </div>

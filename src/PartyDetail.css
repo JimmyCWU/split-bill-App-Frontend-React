@@ -5,3 +5,7 @@
 .show-party-name{
     color:white;
 }
+.party-top-area{
+    display:flex;
+    justify-content: space-around;
+}

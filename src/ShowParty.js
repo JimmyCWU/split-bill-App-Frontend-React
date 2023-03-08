@@ -34,6 +34,7 @@ const ShowParty = () => {
             <PartyDetail
               key={index}
               partyName ={data.partyName}
+              partyId = {data.partyId}
             />
           );
         })}
