@@ -34,11 +34,12 @@ const LoginForm = () => {
         console.log(typeof getToken)
         localStorage.setItem("token", JSON.stringify(getToken));
         setAuthToken(res.data.token);
+        localStorage.setItem("username", JSON.stringify(username));
         navigate("/HomePage");
       })
       .catch((err) => {
         console.log(err);
-        console.log("login fail");
+        alert("login fail");
       });
   };
   return (

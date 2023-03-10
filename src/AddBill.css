@@ -2,6 +2,15 @@
     border: 3px solid ;
 }
 
-h3{
-    background-color:aquamarine;
+.label-box{
+    background-color: #fbd266;
+}
+
+.input-area{
+    display: flex;
+    justify-content: space-evenly;
+}
+.bill-Type-box{
+    display: flex;
+    justify-content:space-around;
 }

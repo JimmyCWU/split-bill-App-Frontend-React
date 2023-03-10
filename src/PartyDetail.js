@@ -4,6 +4,7 @@ import Expense from "./Expense";
 import AddBill from "./AddBill";
 import AddMemberPopup from "./AddMemberPopup";
 import './PartyDetail.css';
+import ShowUserInParty from './ShowUserInParty';
 
 const PartyDetail = (props) =>{
     const {partyName, partyId} = props
