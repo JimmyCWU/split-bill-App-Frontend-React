@@ -7,8 +7,8 @@
 }
 
 .input-area{
-    display: flex;
-    justify-content: space-evenly;
+    display: column;
+    
 }
 .bill-Type-box{
     display: flex;
