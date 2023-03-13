@@ -36,6 +36,8 @@ const AddMemberPopup = (props) => {
            alert("Valid user");
          }else{
            alert("Invalid user");
+           
+
          };
       })
       .catch((err) => {

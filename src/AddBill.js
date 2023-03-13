@@ -23,7 +23,7 @@ const AddBill = () => {
     const[WhoPaytheBillInputList, setWhoPaytheBillInputList] = useState([ 
       { name: "", cost: "" },
     ]);
-
+    
     const [WhoPayinputlist, setWhoPayList] = useState([{ name: "", cost: "" }]);
     const handldeSubmit = () => {
        const api = `http://192.168.1.150/bill-service/api/bill/add`;
@@ -33,7 +33,8 @@ const AddBill = () => {
           billName:billName,
           totalAmount: totalAmount,
           memberIdMap:WhoNeedtoPayinputList,
-          billType:billType
+          billType:billType,
+
         },
         {
           headers: {
