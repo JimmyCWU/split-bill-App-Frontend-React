@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
-
+import AdminHead from "./AdminHead";
 
 const AdminPage = () => {
     return(
     <div>
-        <h2>Hello this is Admin Page</h2>
+        <AdminHead />
     </div>
     )
 }
