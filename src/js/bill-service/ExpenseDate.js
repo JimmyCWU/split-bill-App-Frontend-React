@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./ExpenseDate.css";
+import "../../css/bill-service/ExpenseDate.css";
 
 const ExpenseDate = (props) => {
   const time = Date.parse(props.createTime);

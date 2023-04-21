@@ -1,25 +1,26 @@
 import React from "react";
 import { useState } from "react";
-import "./AdminButton.css";
+import "../../css/admin/AdminButton.css";
 import axios from "axios";
 import Table from 'react-bootstrap/Table';
 import AdminUsersData from "./AdminUsersData"
+import { ip_address } from "../../env/env.js";
 
-const AdminShowAllUsers = () =>{
+const AdminShowAllUsers = () => {
   const [list, setList] = useState([]);
   const handleClose = () => setList(false);
   const handleShow = () => setList(true);
-  const api = "http://192.168.1.150/user-service/api/user/admin/findAll";
+  const api = `http://${ip_address}/bill-service/api/bill/add`;
 
   const handleSubmit = (e) => {
     const getData = localStorage.getItem("token");
     const token = JSON.parse(getData);
     axios
       .get(api, {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
       )
       .then((res) => {
         console.log("ok");
@@ -29,22 +30,22 @@ const AdminShowAllUsers = () =>{
         console.log(err);
       });
   }
-    return (
-      <div>
-        <button className="btn" onClick={handleSubmit}>
-          Show All Users
-        </button>
+  return (
+    <div>
+      <button className="btn" onClick={handleSubmit}>
+        Show All Users
+      </button>
 
-        <Table striped bordered hover>
-          <thead>
-            <tr>
-              <th>User Id</th>
-              <th>Username</th>
-              <th>Name</th>
-            </tr>
-          </thead>
-          <tbody>
-            {list.map((data, index) => {
+      <Table striped bordered hover>
+        <thead>
+          <tr>
+            <th>User Id</th>
+            <th>Username</th>
+            <th>Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          {list.map((data, index) => {
             return (
               <AdminUsersData
                 key={index}
@@ -54,11 +55,11 @@ const AdminShowAllUsers = () =>{
               />
             );
           })}
-          </tbody>
-        </Table>
-      </div>
-    );
+        </tbody>
+      </Table>
+    </div>
+  );
 
-    
+
 }
 export default AdminShowAllUsers;

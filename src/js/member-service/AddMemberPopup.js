@@ -1,9 +1,10 @@
 import React from "react";
 import { useState } from "react";
-import "./AddPartyPopup.css";
+import "../../css/party-service/AddPartyPopup.css";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import axios from "axios";
+import { ip_address } from "../../env/env.js";
 
 const AddMemberPopup = (props) => {
   const [show, setShow] = useState(false);
@@ -14,8 +15,8 @@ const AddMemberPopup = (props) => {
   const [userIdList, setUserIdList] = useState([]);
   const [dynamicUserIdList, setDynamicUserIdList] = useState([]);
   const { partyId } = props;
-  const api = "http://192.168.1.150/member-service/api/member/addMembers";
-  const apiForSearch = `http://192.168.1.150/user-service/api/user/search/${username}`;
+  const api = `http://${ip_address}/member-service/api/member/addMembers`;
+  const apiForSearch = `http://${ip_address}/user-service/api/user/search/${username}`;
 
   const handleSearch = (e) => {
     const getData = localStorage.getItem("token");
@@ -30,15 +31,15 @@ const AddMemberPopup = (props) => {
         },
       })
       .then((res) => {
-         if (res.data !== "") {
-           dynamicUserIdList.push(res.data.userId);
-           setDynamicUserIdList(dynamicUserIdList);
-           alert("Valid user");
-         }else{
-           alert("Invalid user");
-           
+        if (res.data !== "") {
+          dynamicUserIdList.push(res.data.userId);
+          setDynamicUserIdList(dynamicUserIdList);
+          alert("Valid user");
+        } else {
+          alert("Invalid user");
 
-         };
+
+        };
       })
       .catch((err) => {
         console.log(err);

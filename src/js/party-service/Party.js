@@ -4,7 +4,7 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
-import AAA from './AAA';
+import AA from '../bill-service/AA';
 
 
 const Party = () => {
@@ -17,7 +17,7 @@ const Party = () => {
             <Navbar.Brand>Party Name : {partyName}</Navbar.Brand>
             <NavDropdown title="Add A Bill" id="collasible-nav-dropdown">
               <NavDropdown.Item>
-                <AAA/>
+                <AA/>
               </NavDropdown.Item>
               <NavDropdown.Item>
                 Go Dutch

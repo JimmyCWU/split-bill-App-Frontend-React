@@ -2,11 +2,12 @@ import axios from "axios";
 import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import HomePage from "./HomePage";
+import HomePage from "../../HomePage";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
+import { ip_address } from "../../env/env.js";
 
-import "./LoginForm.css";
+import "../../css/user-service/LoginForm.css";
 
 const LoginForm = () => {
   const [show, setShow] = useState(false);
@@ -14,7 +15,7 @@ const LoginForm = () => {
   const handleShow = () => setShow(true);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const api = `http://192.168.1.150/user-service/api/auth/login`;
+  const api = `http://${ip_address}/user-service/api/auth/login`;
   const [authtoken, setAuthToken] = useState(
     localStorage.getItem("token" || "")
   );
@@ -23,11 +24,11 @@ const LoginForm = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     axios
-      .post(api, 
+      .post(api,
         {
-        'username':username,
-        'password':password 
-      })
+          'username': username,
+          'password': password
+        })
       .then((res) => {
         const getToken = res.data.token;
         console.log(getToken);

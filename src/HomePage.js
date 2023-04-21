@@ -1,8 +1,8 @@
 import React from "react";
-import "./App.css";
-import Expense from "./Expense";
+import "./css/App.css";
+import Expense from "./js/bill-service/Expense";
 import Head from "./Head";
-import ShowParty from "./ShowParty";
+import ShowParty from "./js/party-service/ShowParty";
 
 function HomePage() {
   return (

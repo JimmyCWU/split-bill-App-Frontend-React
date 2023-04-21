@@ -1,23 +1,24 @@
 import React from "react";
 import axios from "axios";
 import { useState } from "react";
-import "./Expense.css";
+import "../../css/bill-service/Expense.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 // Bootstrap Bundle JS
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import ExpenseItem from "./ExpenseItem";
+import { ip_address } from "../../env/env.js";
 
 
-const Expense = () =>{
+const Expense = () => {
   const [result, setResult] = useState("");
   const [partyId, setPartyId] = useState("");
   const [list, setList] = useState([]);
   const token = '';
-  const api = `http://192.168.1.150/bill-service/api/bill/2`;
+  const api = `http://${ip_address}/bill-service/api/bill/2`;
   React.useEffect(() => {
-  const getData = localStorage.getItem("token");
-  const token = JSON.parse(getData);
-  console.log(token);
+    const getData = localStorage.getItem("token");
+    const token = JSON.parse(getData);
+    console.log(token);
     axios
       .get(api, {
         headers: {
@@ -31,7 +32,8 @@ const Expense = () =>{
       //console.log(res.data.results[0].gender)
       .catch((err) => {
         console.log(err);
-      });},[]);
+      });
+  }, []);
   return (
     <div>
       <div className="expenses">
